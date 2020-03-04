@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Exercise_16_13.jnlp">
+  <information>
+    <title>Exercise_16_13</title>
+    <vendor>lskel</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Exercise_16_13.jar" size="2661" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="Exercise_16_13"  name="Exercise_16_13" />
+  <update check="always"/>
+</jnlp>
