@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Exercise31_9 Server.jnlp">
+  <information>
+    <title>Exercise31_9 Server</title>
+    <vendor>lskel</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="exercise31_9.server.Exercise31_9Server"  name="Exercise31_9 Server" />
+  <update check="always"/>
+</jnlp>
