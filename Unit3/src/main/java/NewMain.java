@@ -15,9 +15,9 @@ public class NewMain {
 
 
     public void Main(String[] args) {
-    System.out.print("|Array size    |Selection Sort|Bubble Sort   |Merge Sort    |Quick Sort    |Heap Sort     |Radix Sort    |");
-    for (int i = 50000; i <= 300000; i += 50000) {
-    printValue(i);
+        System.out.print("|Array size    |Selection Sort|Bubble Sort   |Merge Sort    |Quick Sort    |Heap Sort     |Radix Sort    |");
+        for (int i = 50000; i <= 300000; i += 50000) {
+        printValue(i);
     }
    }
  
@@ -25,71 +25,72 @@ public class NewMain {
      *
      * @param arraySize
      */
+    // I had to do some indenting 
     public void printValue(int arraySize) {
-    int  strWidth = 14;
+        int  strWidth = 14;
+
+        int[] list = new int[arraySize];
+        for (int i = 0; i < list.length; i++) {
+            list[i] = (int)(Math.random() * 1000000);
+        }
+        System.out.print("\n|");
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < strWidth; j++) {
+                System.out.print("-");
+            }
+            System.out.print("|");
+        }
   
-    int[] list = new int[arraySize];
-    for (int i = 0; i < list.length; i++) {
-    list[i] = (int)(Math.random() * 1000000);
-    }
-    System.out.print("\n|");
-    for (int i = 0; i < 7; i++) {
-    for (int j = 0; j < strWidth; j++) {
-    System.out.print("-");
-    }
-    System.out.print("|");
-    }
+        System.out.printf("\n|%" + strWidth + "d|", arraySize);
   
-    System.out.printf("\n|%" + strWidth + "d|", arraySize);
-  
-    int[] list2 = new int[arraySize];
-    System.arraycopy(list, 0, list2, 0, list.length);  
-    long startTime = System.currentTimeMillis();  
-    selectionSort(list2);
-    long endTime = System.currentTimeMillis();
-    long executionTime = endTime - startTime;
-    System.out.printf("%" + strWidth + "d|", executionTime);
+        int[] list2 = new int[arraySize];
+        System.arraycopy(list, 0, list2, 0, list.length);  
+        long startTime = System.currentTimeMillis();  
+        selectionSort(list2);
+        long endTime = System.currentTimeMillis();
+        long executionTime = endTime - startTime;
+        System.out.printf("%" + strWidth + "d|", executionTime);
   
   
-    list2 = new int[arraySize];
-    System.arraycopy(list, 0, list2, 0, list.length);  
-    startTime = System.currentTimeMillis();  
-    bubbleSort(list2);
-    endTime = System.currentTimeMillis();
-    executionTime = endTime - startTime;
-    System.out.printf("%" + strWidth + "d|", executionTime);
+        list2 = new int[arraySize];
+        System.arraycopy(list, 0, list2, 0, list.length);  
+        startTime = System.currentTimeMillis();  
+        bubbleSort(list2);
+        endTime = System.currentTimeMillis();
+        executionTime = endTime - startTime;
+        System.out.printf("%" + strWidth + "d|", executionTime);
   
-    list2 = new int[arraySize];
-    System.arraycopy(list, 0, list2, 0, list.length);  
-    startTime = System.currentTimeMillis();  
-    mergeSort(list2);
-    endTime = System.currentTimeMillis();
-    executionTime = endTime - startTime;
-    System.out.printf("%" + strWidth + "d|", executionTime);
-  
-    list2 = new int[arraySize];
-    System.arraycopy(list, 0, list2, 0, list.length);  
-    startTime = System.currentTimeMillis();  
-    quickSort(list2);
-    endTime = System.currentTimeMillis();
-    executionTime = endTime - startTime;
-    System.out.printf("%" + strWidth + "d|", executionTime);
-  
-    list2 = new int[arraySize];
-    System.arraycopy(list, 0, list2, 0, list.length);  
-    startTime = System.currentTimeMillis();  
-    heapSort(list2);
-    endTime = System.currentTimeMillis();
-    executionTime = endTime - startTime;
-    System.out.printf("%" + strWidth + "d|", executionTime);
-  
-    list2 = new int[arraySize];
-    System.arraycopy(list, 0, list2, 0, list.length);  
-    startTime = System.currentTimeMillis();  
-    radixSort(list2, 1000000);
-    endTime = System.currentTimeMillis();
-    executionTime = endTime - startTime;
-    System.out.printf("%" + strWidth + "d|", executionTime);
+        list2 = new int[arraySize];
+        System.arraycopy(list, 0, list2, 0, list.length);  
+        startTime = System.currentTimeMillis();  
+        mergeSort(list2);
+        endTime = System.currentTimeMillis();
+        executionTime = endTime - startTime;
+        System.out.printf("%" + strWidth + "d|", executionTime);
+
+        list2 = new int[arraySize];
+        System.arraycopy(list, 0, list2, 0, list.length);  
+        startTime = System.currentTimeMillis();  
+        quickSort(list2);
+        endTime = System.currentTimeMillis();
+        executionTime = endTime - startTime;
+        System.out.printf("%" + strWidth + "d|", executionTime);
+
+        list2 = new int[arraySize];
+        System.arraycopy(list, 0, list2, 0, list.length);  
+        startTime = System.currentTimeMillis();  
+        heapSort(list2);
+        endTime = System.currentTimeMillis();
+        executionTime = endTime - startTime;
+        System.out.printf("%" + strWidth + "d|", executionTime);
+
+        list2 = new int[arraySize];
+        System.arraycopy(list, 0, list2, 0, list.length);  
+        startTime = System.currentTimeMillis();  
+        radixSort(list2, 1000000);
+        endTime = System.currentTimeMillis();
+        executionTime = endTime - startTime;
+        System.out.printf("%" + strWidth + "d|", executionTime);
   
   
   
@@ -98,14 +99,14 @@ public class NewMain {
  
     public void selectionSort(int[] list) {
     for (int i = 0; i < list.length - 1; i++) {
-    int currentMin = list[i];
-    int currentMinIndex = i;
+        int currentMin = list[i];
+        int currentMinIndex = i;
 
-    for (int j = i + 1; j < list.length; j++) {
-    if (currentMin > list[j]) {
-        currentMin = list[j];
-        currentMinIndex = j;
-    }
+        for (int j = i + 1; j < list.length; j++) {
+            if (currentMin > list[j]) {
+                currentMin = list[j];
+                currentMinIndex = j;
+        }
    }
    if (currentMinIndex != i) {
         list[currentMinIndex] = list[i];
@@ -135,23 +136,23 @@ public class NewMain {
  
  
     public void mergeSort(int[] list) {
-    if (list.length > 1) {
-    // Merge sort the first half
-    int[] firstHalf = new int[list.length / 2];
-    System.arraycopy(list, 0, firstHalf, 0, list.length / 2);
-    mergeSort(firstHalf);
+        if (list.length > 1) {
+        // Merge sort the first half
+        int[] firstHalf = new int[list.length / 2];
+        System.arraycopy(list, 0, firstHalf, 0, list.length / 2);
+        mergeSort(firstHalf);
 
-    // Merge sort the second half
-    int secondHalfLength = list.length - list.length / 2;
-    int[] secondHalf = new int[secondHalfLength];
-    System.arraycopy(list, list.length / 2, secondHalf, 0,
-    secondHalfLength);
-    mergeSort(secondHalf);
+        // Merge sort the second half
+        int secondHalfLength = list.length - list.length / 2;
+        int[] secondHalf = new int[secondHalfLength];
+        System.arraycopy(list, list.length / 2, secondHalf, 0,
+        secondHalfLength);
+        mergeSort(secondHalf);
 
-    // Merge firstHalf with secondHalf into list
-    merge(firstHalf, secondHalf, list);
+        // Merge firstHalf with secondHalf into list
+        merge(firstHalf, secondHalf, list);
+        }
     }
- }
     public void merge(int[] list1, int[] list2, int[] temp) {
     int current1 = 0; // Current index in list1
     int current2 = 0; // Current index in list2
